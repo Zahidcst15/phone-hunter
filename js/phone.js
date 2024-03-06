@@ -10,6 +10,18 @@ const displayPhones = phones =>{
     const phoneContainer = document.getElementById('phone-container');
 
     phoneContainer.textContent = '';
+    const showAllContainer = document.getElementById('show-all-container');
+    if(phones.length >9){
+         showAllContainer.classList.remove('hidden')
+    }
+    else{
+      showAllContainer.classList.add('hidden')
+    }
+
+    // display only first 10 phone
+    phones = phones.slice(0, 9)
+
+
     phones.forEach(phone =>{
         const phoneCard = document.createElement('div');
         phoneCard.classList = `card p-4 bg-base-100 shadow-xl`;
